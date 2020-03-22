@@ -78,8 +78,16 @@ void presentation() {
   numSensors = sensors.getDeviceCount();
 
   // Present all sensors to controller
-  for (int i=0; i<ATTACHED_DS18B20 && i<MAX_ATTACHED_DS18B20; i++) {   
-     present(i, char("6,op_ds_klatka"));
+  for (int i=0; i<ATTACHED_DS18B20 && i<MAX_ATTACHED_DS18B20; i++) {
+    if(i=0){
+      present(i, S_TEMP,"0P_DS_Klatka");
+    }
+    if(i=1){
+      present(i, S_TEMP,"0P_DS_Ogrzew_Zasil");
+    } 
+    if(i=2){
+      present(i, S_TEMP,"0P_DS_Ogrzew_Powrot");
+    } 
   }
 }
 
@@ -100,7 +108,7 @@ void loop()
   sleep(conversionTime);
 
   // Read temperatures and send them to controller 
-  for (int i=0; i<3 && i<MAX_ATTACHED_DS18B20; i++) {
+  for (int i=0; i<ATTACHED_DS18B20 && i<MAX_ATTACHED_DS18B20; i++) {
  
     // Fetch and round temperature to one decimal
  //   float temperature = static_cast<float>(static_cast<int>((sensors.requestTemperaturesByAddress(D[i])) * 10.)) / 10.;
