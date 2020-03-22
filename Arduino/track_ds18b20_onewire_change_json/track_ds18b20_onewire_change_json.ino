@@ -9,6 +9,9 @@
  * Copyright (C) 2013-2015 Sensnology AB
  * Full contributor list: https://github.com/mysensors/Arduino/graphs/contributors
  *
+ * Modified and corrected by Przemyslaw Myk
+ * Poland
+ *
  * Documentation: http://www.mysensors.org
  * Support Forum: http://forum.mysensors.org
  *
